@@ -11,7 +11,7 @@ const app = express();
 require('./config/passport')(passport);
 
 //------------ DB Configuration ------------//
-const db = require('./config/key').MongoURI;
+const db = 'mongodb+srv://manish79:123321@backend.iawy5ig.mongodb.net/';
 
 //------------ Mongo Connection ------------//
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
@@ -53,6 +53,6 @@ app.use(function(req, res, next) {
 app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 9000;
 
 app.listen(PORT, console.log(`Server running on PORT ${PORT}`));
